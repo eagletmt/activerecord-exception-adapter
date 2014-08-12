@@ -1,8 +1,12 @@
-require 'active_record'
-require 'active_record/connection_adapters/exception_adapter'
+require 'active_support/lazy_load_hooks'
 
-ActiveRecord::Base.class_eval do
-  def self.exception_connection(config)
+module ActiveRecordExceptionAdapter
+  def exception_connection(config)
     ActiveRecord::ConnectionAdapters::ExceptionAdapter.new(config)
   end
+end
+
+ActiveSupport.on_load(:active_record) do
+  require 'active_record/connection_adapters/exception_adapter'
+  ActiveRecord::Base.extend ActiveRecordExceptionAdapter
 end

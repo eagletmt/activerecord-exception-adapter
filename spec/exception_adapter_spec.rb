@@ -1,7 +1,8 @@
 require 'activerecord-exception-adapter'
 
-RSpec.describe ActiveRecord::ConnectionAdapters::ExceptionAdapter do
+RSpec.describe ActiveRecordExceptionAdapter do
   before :all do
+    require 'active_record'
     ActiveRecord::Base.configurations = {
       'main' => {
         'adapter' => 'exception',
