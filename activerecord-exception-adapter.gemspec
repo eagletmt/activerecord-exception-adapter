@@ -18,5 +18,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", ">= 3.0.0"
-  spec.add_dependency "activerecord"
+  spec.add_development_dependency "appraisal", ">= 1.0.0"
+  spec.add_dependency "activerecord", ">= 3.2"
 end
