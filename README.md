@@ -1,6 +1,8 @@
-# Activerecord::Exception::Adapter
+# ActiveRecord::ConnectionAdapters::ExceptionAdapter
+[![Gem Version](https://badge.fury.io/rb/activerecord-exception-adapter.svg)](http://badge.fury.io/rb/activerecord-exception-adapter)
+[![Build Status](https://travis-ci.org/eagletmt/activerecord-exception-adapter.svg?branch=master)](https://travis-ci.org/eagletmt/activerecord-exception-adapter)
 
-TODO: Write a gem description
+ActiveRecord adapter that raises an exception when used.
 
 ## Installation
 
@@ -18,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```yaml
+production_unused:
+    adapter: exception
+    comment: Do NOT use production_unused!
+```
 
 ## Contributing
 
